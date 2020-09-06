@@ -1,5 +1,5 @@
 # SRCV
-Spectrum recognition based on computer vision: A tool for 13C and 1H  NMR data extraction from already analyzed spectra
+Spectrum recognition based on computer vision: A tool for 13C and 1H  NMR data extraction from already analyzed spectra.
 This is the repository of codes for the paper entitled “Machine learning enhanced spectrum recognition system SRCV for intelligent NMR data extraction”. This repository contains the source codes, datasets for number recognition training and test, and 1D NMR spectra examples for NMR data extraction. 
 
 # Number Recognition
