@@ -1,0 +1,30 @@
+﻿  SVM.cpp
+d:\dev\srcv\svm.cpp(35): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  OCR.cpp
+  main.cpp
+  KNN.cpp
+d:\dev\srcv\knn.cpp(37): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  HorizontalBracket.cpp
+d:\dev\srcv\horizontalbracket.cpp(166): warning C4244: “初始化”: 从“double”转换到“uchar”，可能丢失数据
+d:\dev\srcv\horizontalbracket.cpp(167): warning C4244: “初始化”: 从“double”转换到“uchar”，可能丢失数据
+d:\dev\srcv\horizontalbracket.cpp(168): warning C4244: “初始化”: 从“double”转换到“uchar”，可能丢失数据
+d:\dev\srcv\horizontalbracket.cpp(204): warning C4244: “=”: 从“double”转换到“uchar”，可能丢失数据
+d:\dev\srcv\horizontalbracket.cpp(205): warning C4244: “=”: 从“double”转换到“uchar”，可能丢失数据
+d:\dev\srcv\horizontalbracket.cpp(206): warning C4244: “=”: 从“double”转换到“uchar”，可能丢失数据
+d:\dev\srcv\horizontalbracket.cpp(261): warning C4554: “&”: 检查运算符优先级可能存在的错误；使用圆括号阐明优先级
+d:\dev\srcv\horizontalbracket.cpp(400): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  FileOp.cpp
+  CutImg.cpp
+d:\dev\srcv\cutimg.cpp(148): warning C4244: “初始化”: 从“double”转换到“uchar”，可能丢失数据
+d:\dev\srcv\cutimg.cpp(149): warning C4244: “初始化”: 从“double”转换到“uchar”，可能丢失数据
+d:\dev\srcv\cutimg.cpp(150): warning C4244: “初始化”: 从“double”转换到“uchar”，可能丢失数据
+d:\dev\srcv\cutimg.cpp(186): warning C4244: “=”: 从“double”转换到“uchar”，可能丢失数据
+d:\dev\srcv\cutimg.cpp(187): warning C4244: “=”: 从“double”转换到“uchar”，可能丢失数据
+d:\dev\srcv\cutimg.cpp(188): warning C4244: “=”: 从“double”转换到“uchar”，可能丢失数据
+d:\dev\srcv\cutimg.cpp(320): warning C4101: “num_first”: 未引用的局部变量
+d:\dev\srcv\cutimg.cpp(320): warning C4101: “num_second”: 未引用的局部变量
+d:\dev\srcv\cutimg.cpp(432): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  Adaboost.cpp
+d:\dev\srcv\adaboost.cpp(39): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  正在生成代码...
+  HW6Code.vcxproj -> D:\dev\SRCV\x64\Debug\HW6Code.exe
