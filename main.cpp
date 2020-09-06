@@ -32,7 +32,7 @@ int main() {
 	ofstream fout("brackets.txt");
 
 	while (true) {
-		cout << "1.SVM 2.AdaBoost 3.KNN 4.horizontal integration bracket extraction 5.vertical integration bracket extraction 6.1H chemical shift extraction 7.13C chemical shift extraction  8.knn test" << endl;
+		cout << "1.SVM 2.AdaBoost 3.KNN 4.extract 1H integral and range of shift values (horizontal integration bracket) 5.extract 1H integral and range of shift values (vertical integration bracket) 6.extract 1H chemical shift 7.extract 13C chemical shift  8.knn test" << endl;
 		char c;
 		cin >> c;
 		if (c == '1') {
@@ -51,7 +51,7 @@ int main() {
 			knn.KNNTest("testset");
 		}
 		else if (c == '4') {
-			// ¶ÔË®Æ½À¨ºÅ´¦Àí
+			// ï¿½ï¿½Ë®Æ½ï¿½ï¿½ï¿½Å´ï¿½ï¿½ï¿½
 			for (int i = 0; i <=29 ; i++) {
 				//string filepath = "TT035/CC -  (" + to_string(i) + ").png";
 				string filepath = "examples-input/" + to_string(i) + "H.png";
@@ -60,14 +60,14 @@ int main() {
 				Mat image = imread(filepath, IMREAD_COLOR);
 				vector<string> numbers;
 				vector<pair<int, int> > bracket_pos;
-				// ¼ì²â¿Ì¶È³ß£¬µÃµ½ÆðÊ¼µÄÏñËØ×Ý×ø±êcol_startºÍÊý×Öcol_start_num£¬µ¥Î»³¤¶ÈµÄÏñËØ´óÐ¡unit_pixels,ÒÔ¼°µ¥Î»³¤¶Èunit
+				// ï¿½ï¿½ï¿½Ì¶È³ß£ï¿½ï¿½Ãµï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½col_startï¿½ï¿½ï¿½ï¿½ï¿½ï¿½col_start_numï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½ï¿½Èµï¿½ï¿½ï¿½ï¿½Ø´ï¿½Ð¡unit_pixels,ï¿½Ô¼ï¿½ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½unit
 				vector<double> scale = cut.ScaleDetect(image, ocr);
-				// ¼ì²âË®Æ½À¨ºÅµÄÊý×ÖÒÔ¼°¶ÔÓ¦µÄÀ¨ºÅÏñËØÎ»ÖÃ
+				// ï¿½ï¿½ï¿½Ë®Æ½ï¿½ï¿½ï¿½Åµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½
 				//cout << "$$$$$$$$$$$$$" << endl;
 				horizontal.detectHorizontalBracketAndNum(image, ocr, numbers, bracket_pos);
 				cout << "integral---------------------------------------------------" << endl;
 				fout << "integral---------------------------------------------------" << endl;
-				// ½«À¨ºÅµÄÏñËØÎ»ÖÃ×ª»»ÎªÊµ¼Ê×ø±ê
+				// ï¿½ï¿½ï¿½ï¿½ï¿½Åµï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½×ªï¿½ï¿½ÎªÊµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 				cout << filepath << endl;
 				fout << filepath << endl;
 			//	for (int k = 0; k < scale.size(); k++) {
@@ -96,21 +96,21 @@ int main() {
 			}
 		}
 		else if (c == '5') {
-			// ¶Ô´¹Ö±À¨ºÅ´¦Àí
+			// ï¿½Ô´ï¿½Ö±ï¿½ï¿½ï¿½Å´ï¿½ï¿½ï¿½
 			for (int i = 1; i <= 88; i += 2) {
 				string filepath = "Ol9b/ol9b (" + to_string(i) + ").png";
 				cout << filepath << endl;
 				// string filepath = "TT035/CC -  (2).png";
 				Mat image = imread(filepath, IMREAD_COLOR);
-				// ¼ì²â¿Ì¶È³ß£¬µÃµ½ÆðÊ¼µÄÏñËØ×Ý×ø±êcol_startºÍÊý×Öcol_start_num£¬µ¥Î»³¤¶ÈµÄÏñËØ´óÐ¡unit_pixels,ÒÔ¼°µ¥Î»³¤¶Èunit
+				// ï¿½ï¿½ï¿½Ì¶È³ß£ï¿½ï¿½Ãµï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½col_startï¿½ï¿½ï¿½ï¿½ï¿½ï¿½col_start_numï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½ï¿½Èµï¿½ï¿½ï¿½ï¿½Ø´ï¿½Ð¡unit_pixels,ï¿½Ô¼ï¿½ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½unit
 				vector<double> scale = cut.ScaleDetect(image, ocr);
-				// ¼ì²â´¹Ö±À¨ºÅµÄÎ»ÖÃ
+				// ï¿½ï¿½â´¹Ö±ï¿½ï¿½ï¿½Åµï¿½Î»ï¿½ï¿½
 				vector<pair<int, int> > bracket_pos = horizontal.detectVerticalBracket(image);
-				// µÃµ½´¹Ö±À¨ºÅÊý×Ö
+				// ï¿½Ãµï¿½ï¿½ï¿½Ö±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 				vector<string> numbers = horizontal.detectVerticalBracketNum(image, ocr);
 				fout << "---------------------------------------------------" << endl;
 				fout << filepath << endl;
-				// ½«À¨ºÅµÄÏñËØÎ»ÖÃ×ª»»ÎªÊµ¼Ê×ø±ê
+				// ï¿½ï¿½ï¿½ï¿½ï¿½Åµï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½×ªï¿½ï¿½ÎªÊµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 				vector<pair<double, double>> actual_bracket = horizontal.convertToActualBracket(scale, bracket_pos);
 				for (int k = 0; k < actual_bracket.size() && k < numbers.size(); k++) {
 					cout << "( " << numbers[k] << ", " << actual_bracket[k].first << ", " << actual_bracket[k].second << " )" << endl;
@@ -123,7 +123,7 @@ int main() {
 			}
 		}
 		else if (c == '6') {
-			// ¶ÔHÆ×ÉÏ·½Êý¾Ý´¦Àí
+			// ï¿½ï¿½Hï¿½ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ï¿½Ý´ï¿½ï¿½ï¿½
 			for (int i = 0; i <= 29; i++) {
 				fout << endl;
 				cout << endl;
@@ -137,15 +137,15 @@ int main() {
 				
 				vector<string> numbers;
 				vector<pair<int, int> > bracket_pos;
-				// ¼ì²â¿Ì¶È³ß£¬µÃµ½ÆðÊ¼µÄÏñËØ×Ý×ø±êcol_startºÍÊý×Öcol_start_num£¬µ¥Î»³¤¶ÈµÄÏñËØ´óÐ¡unit_pixels,ÒÔ¼°µ¥Î»³¤¶Èunit
+				// ï¿½ï¿½ï¿½Ì¶È³ß£ï¿½ï¿½Ãµï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½col_startï¿½ï¿½ï¿½ï¿½ï¿½ï¿½col_start_numï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½ï¿½Èµï¿½ï¿½ï¿½ï¿½Ø´ï¿½Ð¡unit_pixels,ï¿½Ô¼ï¿½ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½unit
 				vector<double> scale = cut.ScaleDetect(image, ocr);
-				// ¼ì²âË®Æ½À¨ºÅµÄÊý×ÖÒÔ¼°¶ÔÓ¦µÄÀ¨ºÅÏñËØÎ»ÖÃ
+				// ï¿½ï¿½ï¿½Ë®Æ½ï¿½ï¿½ï¿½Åµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½
 				horizontal.detectCNTRNum(image, ocr, numbers, bracket_pos);
 				for (int i = 0; i < numbers.size(); i++) {
 					cout << numbers[i] << endl;
 					fout << numbers[i] << endl;
 				}
-				// ½«À¨ºÅµÄÏñËØÎ»ÖÃ×ª»»ÎªÊµ¼Ê×ø±ê
+				// ï¿½ï¿½ï¿½ï¿½ï¿½Åµï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½×ªï¿½ï¿½ÎªÊµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 				
 				vector<pair<double, double>> actual_bracket = horizontal.convertToActualBracket(scale, bracket_pos);
 				for (int k = 0; k < actual_bracket.size() && k < numbers.size(); k++) {
@@ -159,7 +159,7 @@ int main() {
 			}
 		}
 		else if (c == '7') {
-			// ¶ÔCÆ×Êý¾Ý´¦Àí
+			// ï¿½ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½Ý´ï¿½ï¿½ï¿½
 			for (int i = 0; i <= 29; i++) {
 				fout << endl;
 				cout << endl;
@@ -170,9 +170,9 @@ int main() {
 
 				vector<string> numbers;
 				vector<pair<int, int> > bracket_pos;
-				// ¼ì²â¿Ì¶È³ß£¬µÃµ½ÆðÊ¼µÄÏñËØ×Ý×ø±êcol_startºÍÊý×Öcol_start_num£¬µ¥Î»³¤¶ÈµÄÏñËØ´óÐ¡unit_pixels,ÒÔ¼°µ¥Î»³¤¶Èunit
+				// ï¿½ï¿½ï¿½Ì¶È³ß£ï¿½ï¿½Ãµï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½col_startï¿½ï¿½ï¿½ï¿½ï¿½ï¿½col_start_numï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½ï¿½Èµï¿½ï¿½ï¿½ï¿½Ø´ï¿½Ð¡unit_pixels,ï¿½Ô¼ï¿½ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½unit
 				vector<double> scale = cut.ScaleDetect(image, ocr);
-				// ¼ì²âË®Æ½À¨ºÅµÄÊý×ÖÒÔ¼°¶ÔÓ¦µÄÀ¨ºÅÏñËØÎ»ÖÃ
+				// ï¿½ï¿½ï¿½Ë®Æ½ï¿½ï¿½ï¿½Åµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½
 				horizontal.detectWNTRNum(image, ocr, numbers, bracket_pos);
 				fout << "shift---------------------------------------------------" << endl;
 				fout << filepath << endl;
@@ -180,7 +180,7 @@ int main() {
 				//	cout << numbers[i] << endl;
 					fout << numbers[i] << endl;
 				}
-				// ½«À¨ºÅµÄÏñËØÎ»ÖÃ×ª»»ÎªÊµ¼Ê×ø±ê
+				// ï¿½ï¿½ï¿½ï¿½ï¿½Åµï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½×ªï¿½ï¿½ÎªÊµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 				//fout << filepath << endl;
 				vector<pair<double, double>> actual_bracket = horizontal.convertToActualBracket(scale, bracket_pos);
 				for (int k = 0; k < actual_bracket.size() && k < numbers.size(); k++) {
